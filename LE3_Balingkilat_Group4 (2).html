@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <title>My Little Phony</title>
+    <link rel = "icon" href = "https://i.imgur.com/ycMAR4r.png" type = "image/x-icon">
+    <style>
+        body {
+            font-family: 'Fragment Mono', monospace;
+            background-image:url(https://i.imgur.com/4ODhuMb.png);
+            background-size: cover;
+            animation: fadeInAnimation ease 3s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+        @keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        .johncena {
+            color: transparent;
+            font-size: 2px;
+        }
+        .head {
+            color: grey;
+        }
+        .link {
+            padding: 8px 8px 8px 8px;
+            background-color: #f2d6d5;
+            border-radius: 20px;
+            color: grey;
+            font-size: 10px;
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+        }
+        .link:hover {
+            background-color: transparent;
+            color: white;
+        }
+        .link:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: white;
+            transform-origin: bottom right;
+            transition: transform 0.5s ease-out;
+        }
+        .link:hover:after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+        .img-fluid {
+            max-height: 100px;
+            max-width: 100px;
+        }
+        .truesfriends {
+            height: 40px;
+            width: 40px;
+        }
+        .iconbar {
+            padding-top: 20%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .atruetruefriend {
+            height: 700px;
+            margin-top: 70px;
+            padding:0%;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: flex-start;
+            background-image: url(https://i.imgur.com/VxwRwiY.png);
+            background-size: cover;
+            border-width: 2px;
+            border-color: #DEDEDE;
+            border-style: solid;
+            border-radius: 10px;
+        }
+        .helpsafriendinneed {
+            height: 470px;
+            margin-top: 40px;
+            padding:0%;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: flex-start;
+            background-image: url(https://i.imgur.com/VxwRwiY.png);
+            background-size: cover;
+            border-width: 2px;
+            border-color: #DEDEDE;
+            border-style: solid;
+            border-radius: 5px;
+            width: 450px;
+        }
+        .headpt2idkanymore {
+            background-color: #ffffff;
+            color:#1c1c1c;
+            border-radius: 10px;
+            padding:5px 5px 5px 5px;
+        }
+        .headpt3idkanymore {
+            background-color: #ffffff;
+            color:#1c1c1c;
+            border-radius: 10px;
+            padding:5px 5px 5px 5px;
+        }
+        .btn-group {
+            height: 30px;
+        }
+        .btn-idkwhatthisis {
+            height: 30px;
+            width: 40px;
+            background-color: white;
+            border-color: grey;
+        }
+        .btn-idkwhatthisis:hover {
+            background-color: #e8c1ca;
+            border-color: white;
+            color: grey
+        }
+        .btnnanasatab1 {
+            background-color: white;
+            border-color: #d9d9d9;
+            color: #d9d9d9;
+            border-radius: 50%;
+        }
+        .btnnanasatab2 {
+            background-color: white;
+            border-color: #d9d9d9;
+            color: #292828;
+            border-radius: 50%;
+        }
+        .btnnanasatab3 {
+            background-color: white;
+            border-color: #d9d9d9;
+            color: #827f7f;
+            border-radius: 50%;
+        }
+        .btnnanasatab4 {
+            width: 70%;
+            background-color: white;
+            border-color: #d9d9d9;
+            color: #827f7f;
+            border-radius: 20px;
+            padding-left: 10px;
+            align-items:start;
+        }
+        .material-symbols-outlined {
+            font-size: 15px;
+        }
+        .nav-tabs {
+            padding-left: 5px;
+        }
+        .nav-item {
+            transition: 0.3s;
+            font-size:15px;
+            border-radius:7px;
+            -ms-transform: skewX(-9deg);
+            -webkit-transform: skewX(-9deg);
+            transform: skewX(-9deg);
+        }
+        .nav-item-content {
+            color:#343737 !important;
+            -ms-transform: skewX(9deg);
+            -webkit-transform: skewX(9deg);
+            transform: skewX(9deg);  
+            display: inline-block;
+        }
+        .nav-item:hover {
+            font-size: 17px;
+            background-color: #e8c1ca;
+            color:#343737 !important;
+        }
+        .tab-content {
+            background-color: white;
+            height: 500px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        .tab-content-2 {
+            background-color: white;
+            height: 350px;
+            padding-top: 20px;
+            padding-left: 20px;
+            padding-right: 20px;
+            width: 435px;
+        }
+        .yeet {
+            color: white;
+        }
+        .searchbarthingy {
+            background-color: white;
+            padding-top:10px;
+            padding-bottom: 10px;
+            padding-left: 5px;
+        }
+        .sohelpmegod {
+            border-color: #d8d8d8; 
+            border-width: 2px; 
+            border-style:solid; 
+
+            border-radius: 10px;
+            padding: 5px 5px 5px 5px;
+        }
+        .sohelpmegod::-webkit-scrollbar {
+            width: 13px;
+        }
+        .sohelpmegod::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px #d8d8d8; 
+            border-radius: 10px;
+        }
+        .sohelpmegod::-webkit-scrollbar-thumb {
+            background: #e8c1ca; 
+            border-radius: 5px;
+            box-shadow: 10px 10px 20px #d8d8d8 inset;
+        }
+        .sohelpmegod::-webkit-scrollbar-thumb:hover {
+            background: #f2d6d5; 
+        }
+        .lawrd {
+            display: block;
+            overflow: hidden;
+            padding: 0px 4px 0px 6px;
+            width: 100%;
+        }
+        .form-check {
+            width: 600px;
+        }
+        label {
+            float: left;
+            color:#343737;
+            padding: 10px 10px 10px 10px;
+        }
+        .theformbro {
+            background-image: url(https://i.imgur.com/FZkmCtF.png);
+            background-size: cover;
+            border-color:#d8d8d8;
+            border-style: solid;
+            border-width: 3px;
+            border-radius: 10px;
+            padding-top: 10px;
+            padding-left: 40px;
+            margin-bottom: 10px;
+        }
+        .theformbro2 {
+            padding-top: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        .btn-add {
+            background-color: #e8c1ca;
+            border-color:#d8d8d8;
+            border-style: dotted;
+            border-width: 3px;
+            border-radius: 10px;
+            color:#292828;
+            padding: 3px 3px 3px 3px;
+            width: 100px;
+            height: 40px;
+        }
+        .list-group {
+            padding-left: 3px;
+            width: 30%;
+        }
+        .idkanymore {
+            float: left;
+            border-radius: 50px;
+            background-image: url(https://i.imgur.com/FZkmCtF.png);
+            border-color:#d8d8d8;
+            border-style: solid;
+            border-width: 2px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        .helpmepls {
+            display: block;
+            overflow: hidden;
+            padding: 0px 4px 0px 6px;
+            width: 480px;
+            border-radius: 20px;
+            margin-left: 10px;
+        }
+        #friendList {
+            font-size: 15px;
+            background-image: url(https://i.imgur.com/FZkmCtF.png);
+            border-color:#d8d8d8;
+            border-style: solid;
+            border-width: 2px;
+            height: 470px;
+        }
+        .idklist {
+            background-color: #f7cece;
+            border-radius: 10px;
+            border-style: solid;
+            border-color:#d8d8d8;
+            border-width: 1px;
+            list-style-type: none;
+            margin-bottom: 5px;
+            padding: 5px 5px 5px 5px;
+            margin-top: 5px;
+            margin-right: 3px;
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+        }
+        .idklist:hover {
+            background-color: white;
+            color: #fac0c0;
+        }
+        .idklist:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #fac0c0;
+            transform-origin: bottom right;
+            transition: transform 0.5s ease-out;
+        }
+        .idklist:hover:after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+    </style>
+</head>
+<body onload="displayList()">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-2">
+                <div class="iconbar align-items-center">
+                    <img src="https://i.imgur.com/MP7AoZh.png" class="cutiemark img-fluid" alt="lexcutiemark">
+                    <a class="link" href="https://amancao2026.github.io/signup/">sign_up.exe</a>
+                    <br>
+                    <span class="johncena">hey</span>
+                    <br>
+                    <img src="https://i.imgur.com/oNZH87P.png" class="cutiemark img-fluid" alt="avacutiemark">
+                    <a class="link" href="https://amancao2026.github.io/grabpanda/">grabpanda.exe</a>
+                    <br>
+                    <span class="johncena">hey</span>
+                    <br>
+                    <img src="https://i.imgur.com/fFaAfZM.png" class="cutiemark img-fluid" alt="ayahcutiemark">
+                    <a class="link" href="#">Triple_A.exe</a>
+                    <br>
+                    <span class="johncena">hey</span>
+                    <br>
+                    <img src="https://i.imgur.com/FW5OCmk.png" class="cutiemark img-fluid" alt="logo">
+                    <a class="link" href="#">the_aristocats.exe</a>
+                </div>
+            </div>
+            <div class="col-sm-1">
+                <span class="johncena">atruetruefriend</span>
+            </div>
+            <div class="col-sm-6 atruetruefriend">
+                <div style="width: 86%; padding-left:20px; padding-top:10px; height:30px;">
+                    <span class="headpt2idkanymore"><span class="material-symbols-outlined">pets</span> AristoCats™ Club</span>
+                </div>
+                <div>
+                    <span class="johncena">sobs cries</span>
+                </div>
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <button type="button" class="btn btn-idkwhatthisis">
+                        <span class="material-symbols-outlined">remove</span>
+                    </button>
+                    <button type="button" class="btn btn-idkwhatthisis">
+                        <span class="material-symbols-outlined">fullscreen</span>
+                    </button>
+                    <button type="button" class="btn btn-idkwhatthisis">
+                        <span class="material-symbols-outlined">close</span>
+                    </button>
+                </div>
+                <div style="width: 100%; margin-top:20px; padding-left:5px; padding-right:5px;">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="johncena">,,,,,</li>
+                        <li class="nav-item" role="presentation">
+                          <button class="nav-link" id="friends-tab" data-bs-toggle="tab" data-bs-target="#friends" type="button" role="tab" aria-controls="friends" aria-selected="true" style="background-color: white;"><span class="nav-item-content"><i>Friends</i></span></button>
+                        </li>
+                        <li class="johncena">,,,,,</li>
+                        <li class="nav-item" role="presentation">
+                          <button class="nav-link active" id="addcontact-tab" data-bs-toggle="tab" data-bs-target="#addcontact" type="button" role="tab" aria-controls="addcontact" aria-selected="false" style="background-color: white;"><span class="nav-item-content"><i>Add Contact</i></span></button>
+                        </li>
+                        <li class="johncena">,,,,,</li>
+                        <li class="nav-item" role="presentation">
+                          <button class="nav-link" id="bomnk-tab" data-bs-toggle="tab" data-bs-target="#bomnk" type="button" role="tab" aria-controls="bomnk" aria-selected="false" style="background-color: white;"><span class="nav-item-content"><i>bomnk</i></span></button>
+                        </li>
+                    </ul>
+                    <div class="searchbarthingy">
+                        <button type="button" class="btn btnnanasatab1"><span class="material-symbols-outlined">arrow_back</span></button>
+                        <button type="button" class="btn btnnanasatab2"><span class="material-symbols-outlined">arrow_forward</span></button>
+                        <button type="button" class="btn btnnanasatab3"><span class="material-symbols-rounded" style="font-size: 15px;">home</span></button>
+                        <button type="button" class="btn btnnanasatab2"><span class="material-symbols-outlined">undo</span></button>
+                        <button type="button" class="btn btnnanasatab4">AAA | TheAristoCatsClub.Com</button>
+                        <button type="button" class="btn btnnanasatab2"><span class="material-symbols-outlined">search</span></button>
+                        <hr>
+                    </div>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="friends" role="tabpanel" aria-labelledby="friends-tab" onclick="displayList()">
+                            <div style="display:flex;">
+                                <ul class="list-group" id="friendList">
+          
+                                </ul>
+                                <div class="theformbro2" style="display: flex; width:650px">
+                                    <form class="form-check" id="form2">
+                                    <label for="name" class="idkanymore"><span class="material-symbols-outlined">person</span></label>
+                                    <span class="helpmepls"><input type="text" class="form-control mb-2" id="name2" placeholder="name of friend"></span><br>
+                                    <label for="address" class="idkanymore"><span class="material-symbols-outlined">home</span></label>
+                                    <span class="helpmepls"><input type="text" class="form-control mb-2" id="address2" placeholder="house (for parties!!)"></span><br>
+                                    <label for="bday" class="idkanymore"><span class="material-symbols-outlined">event</span></label>
+                                    <span class="helpmepls"><input type="text" class="form-control mb-4" id="bday2" placeholder="bdayyyyyyy"></span>
+                                  </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="addcontact" role="tabpanel" aria-labelledby="addcontact-tab">
+                            <h1><span class="material-symbols-outlined">auto_awesome</span> My Favorite People</h1>
+                            <div class="theformbro" style="display: flex; height:380px;">
+                                <form class="form-check" id="form1">
+                                <label for="name"><span class="material-symbols-outlined">person</span> name</label>
+                                <span class="lawrd"><input type="text" class="form-control mb-2" id="name" placeholder="add a friend :DDDD"></span><br>
+                                <span class="johncena">ohmyohmygod please dont be in love w someone else</span>
+                                <label for="address"><span class="material-symbols-outlined">home</span> address</label>
+                                <span class="lawrd"><input type="text" class="form-control mb-2" id="address" placeholder="where do they live."></span><br>
+                                <span class="johncena">ohmyohmygod please dont be in love w someone else</span>
+                                <label for="bday"><span class="material-symbols-outlined">event</span> bday</label>
+                                <span class="lawrd"><input type="text" class="form-control mb-4" id="bday" placeholder="when were they born (true test of friendship)"></span>
+                              </form>
+                            </div>
+                            <button id="my" class="btn btn-add" onclick="addFriend()">Add</button>
+                        </div>
+                        <div class="tab-pane fade" id="bomnk" role="tabpanel" aria-labelledby="bomnk-tab">
+                            <div class="sohelpmegod" style="width:880px; height:470px; overflow:auto;">
+                                <h3>A True, True Friend</h3>
+                                    It worked, it worked!<br>
+                                    Oh, I'm so happy you're back to normal!<br>
+                                    Now we need your help!<br>
+                                    A true true friend helps a friend in need<br>
+                                    A friend will be there to help them see<br>
+                                    A true true friend helps a friend in need<br>
+                                    To see the light that shines from a true true friend<br>
+                                    Um, hello? Friend trapped inside, remember?<br>
+                                    Rarity needs your help<br>
+                                    She's trying hard doing what she can<br>
+                                    Would you try, just give it a chance<br>
+                                    You might find that you'll start to understand<br>
+                                    A true true friend helps a friend in need<br>
+                                    A friend will be there to help them see<br>
+                                    A true true friend helps a friend in need<br>
+                                    To see the light that shines from a true true friend<br>
+                                    Uh, what just happened?<br>
+                                    There's no time to explain, but we need your help<br>
+                                    Applejack is trying to make dresses<br>
+                                    Say no more<br>
+                                    Applejack needs your help<br>
+                                    She's trying hard doing what she can<br>
+                                    Would you try, just give it a chance<br>
+                                    You might find that you'll start to understand<br>
+                                    A true true friend helps a friend in need<br>
+                                    A friend will be there to help them see<br>
+                                    A true true friend helps a friend in need<br>
+                                    To see the light that shines from a true true friend<br>
+                                    Oh my, what a terrible dream I just had<br>
+                                    Or... maybe I'm still having it<br>
+                                    Rarity, Pinkie Pie's about to lose the apple farm<br>
+                                    We need Applejack's help<br>
+                                    Lose the apple farm?<br>
+                                    Well, we can't let that happen, can we?<br>
+                                    Pinkie Pie is in trouble<br>
+                                    We need to get there by her side<br>
+                                    We can try to do what we can now<br>
+                                    For together we can be her guide<br>
+                                    A true true friend helps a friend in need<br>
+                                    A friend will be there to help them see<br>
+                                    A true true friend helps a friend in need<br>
+                                    To see the light that shines from a true true friend<br>
+                                    Heehaw! Now that's more like it<br>
+                                    What's next?<br>
+                                    The town's people are furious<br>
+                                    We need the old Pinkie Pie back<br>
+                                    I'm on it, I know just the thing<br>
+                                    The town's people need ya'<br>
+                                    They've been sad for a while<br>
+                                    They march around, face of frown and never seem to smile<br>
+                                    And if you feel like helping we'd appreciate a lot<br>
+                                    If you get up there and spread some cheer<br>
+                                    From here to Canterlot<br>
+                                    Come on ponies<br>
+                                    I wanna see you smile!<br>
+                                    Pinkie!<br>
+                                    A true true friend helps a friend in need<br>
+                                    A friend will be there to help them see<br>
+                                    A true true friend helps a friend in need<br>
+                                    To see the light (to see the light)<br>
+                                    That shines (that shines) from a true true friend!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="helpsafriendinneed">
+                    <div style="width: 72%; padding-left:15px; padding-top:5px; height:25px;">
+                        <span class="headpt3idkanymore"><span class="material-symbols-outlined">pets</span> AristoCats™ Club</span>
+                    </div>
+                    <div>
+                        <span class="michaelbjordan"></span>
+                    </div>
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <button type="button" class="btn btn-idkwhatthisis">
+                            <span class="material-symbols-outlined">remove</span>
+                        </button>
+                        <button type="button" class="btn btn-idkwhatthisis">
+                            <span class="material-symbols-outlined">fullscreen</span>
+                        </button>
+                        <button type="button" class="btn btn-idkwhatthisis">
+                            <span class="material-symbols-outlined">close</span>
+                        </button>
+                    </div>
+                    <div style="width: 100%; margin-top:20px; padding-left:5px; padding-right:5px;">
+                        <ul class="nav nav-tabs" id="myTabs" role="tablist">
+                            <li class="johncena">,,,,,</li>
+                            <li class="nav-item" role="presentation">
+                              <button class="nav-link" id="friends-tabsdjf" data-bs-toggle="tab" data-bs-target="#friends" type="button" role="tab" aria-controls="friends" aria-selected="true" style="background-color: white;"><span class="nav-item-content"><i>About the AristoCats</i></span></button>
+                            </li>
+                        </ul>
+                        <div class="tab-content-2" id="myTabContentrwe">
+                            <div class="tab-pane fade show active" id="friendsme" role="tabpanel" aria-labelledby="friends-tab">
+                                <div>
+                                    <button type="button" class="btn btnnanasatab1"><span class="material-symbols-outlined">arrow_back</span></button>
+                                    <button type="button" class="btn btnnanasatab3"><span class="material-symbols-rounded" style="font-size: 15px;">home</span></button>
+                                    <button type="button" class="btn btnnanasatab4">AristoCats</button>
+                                </div>
+                                <hr>
+                                <h2>The AristoCats</h2>
+                                <p>Ladies do not start fights, but they can finish them!</p>
+                                <p>Marie is the cat who possesses the spirit, mindset, intelligence, confidence, and attitude we aspire to have.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <footer class="fixed-bottom" style="background-color: transparent;">
+                <div class="p-3">
+                    <img src="https://i.imgur.com/FW5OCmk.png" alt="footer" style="border-radius: 10px; border-style: solid; border-width: 2px; border-color:#e8c1ca; background-color: #fff1e7; height:50px; width:50px;"> <span style="border-radius: 30px; border-style: solid; border-width: 3px; border-color:#e8c1ca; background-color: #fff1e7; padding: 8px 8px 8px 8px;"><i>&copy; 2023 Llemos, Mancao, Peralta</i></span> <span style="border-radius: 30px; border-style: solid; border-width: 3px; border-color:#e8c1ca; background-color: #fff1e7; padding: 8px 8px 8px 8px;"><i>search.exe</i></span> <span style="border-radius: 30px; border-style: solid; border-width: 3px; border-color:#e8c1ca; background-color: #fff1e7; padding: 8px 8px 8px 8px;"><i>new_file.exe</i></span>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script>
+      let contacts = JSON.parse(localStorage.getItem('myContacts')) || [];
+
+      function displayList() {
+        let friendList = document.getElementById('friendList')
+        friendList.innerHTML= '';
+
+        for (let i = 0; i < contacts.length; i++) {
+          let newLine = document.createElement('li');
+          newLine.className = "idklist"
+          let name = document.createElement('span');
+          name.innerText = contacts[i].name;
+          let Details = document.createElement('div');
+
+          newLine.appendChild(name);
+          newLine.appendChild(Details);
+          newLine.addEventListener('click', function() {
+            document.getElementById('name2').value = contacts[i].name;
+            document.getElementById('address2').value = contacts[i].address;
+            document.getElementById('bday2').value = contacts[i].bday;
+          });
+          friendList.appendChild(newLine);
+    }
+      }
+
+      displayList();
+
+      function addFriend() {
+          let name = document.getElementById('name').value;
+          let address = document.getElementById('address').value;
+          let bday = document.getElementById('bday').value;
+          let friend = { name, address, bday };
+          contacts.push(friend);
+
+          localStorage.setItem('myContacts', JSON.stringify(contacts));
+
+          displayList();
+          
+          document.getElementById('name').value = '';
+          document.getElementById('address').value = '';
+          document.getElementById('bday').value = '';
+      }
+
+      function clear() {
+        let clear = document.getElementById('Clear');
+        document.getElementById('name').value = '';
+        document.getElementById('address').value = '';
+        document.getElementById('bday').value = '';
+      }
+    </script>
+</body>
+</html>
